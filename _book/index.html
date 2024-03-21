@@ -385,16 +385,16 @@ We can create a data frame using the <code>data.frame()</code> function. We can 
 <span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a>m <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">30</span>)   <span class="co"># generate 30 random numbers for the matrix</span></span>
 <span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a>Mat <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="at">data =</span> m, <span class="at">nrow =</span> <span class="dv">6</span>)</span>
 <span id="cb22-4"><a href="#cb22-4" tabindex="-1"></a>Mat</span></code></pre></div>
-<pre><code>##            [,1]       [,2]        [,3]       [,4]       [,5]
-## [1,] -0.2011624 -0.6003618  1.47313804  0.6260198 -0.1787008
-## [2,]  0.3629898 -1.0195838 -0.07675708  1.6970822 -1.5491711
-## [3,] -0.2957898 -0.4259755  2.31250993 -1.3577016 -1.0993858
-## [4,]  0.2373952  0.6590040  0.06718808 -1.4969804 -0.0371185
-## [5,]  0.4979651 -0.9105043  1.12500755 -1.8610748 -1.0381731
-## [6,] -0.9430711  1.6429358  0.58359167  0.8421483 -0.2063092</code></pre>
+<pre><code>##              [,1]       [,2]       [,3]       [,4]        [,5]
+## [1,] -0.643664483 -0.3695408  1.4657595  0.1779335 -0.44748441
+## [2,] -0.931089667  3.1929910  0.1459249 -0.4340365 -0.04390189
+## [3,]  0.994935127  0.3442942 -0.7468991 -1.1240146  0.93798614
+## [4,] -0.177227184 -0.8705866 -0.5317729  0.9787338 -0.89453060
+## [5,]  0.006026459 -0.8130856  0.5622329  0.9421085  0.14074624
+## [6,] -0.069394567 -0.9850643  0.9011125  0.3164920  0.85431960</code></pre>
 <div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="co">#Next, we want to determine the minimum value of each row: </span></span>
 <span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="fu">apply</span>(Mat, <span class="dv">1</span>, min)</span></code></pre></div>
-<pre><code>## [1] -0.6003618 -1.5491711 -1.3577016 -1.4969804 -1.8610748 -0.9430711</code></pre>
+<pre><code>## [1] -0.6436645 -0.9310897 -1.1240146 -0.8945306 -0.8130856 -0.9850643</code></pre>
 <blockquote>
 <p>What happens if you change the “1” in the apply function to “2”? Try it!</p>
 </blockquote>
@@ -417,15 +417,15 @@ We can create a data frame using the <code>data.frame()</code> function. We can 
 <pre><code>## [1]  2  4  6  8 10</code></pre>
 <div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" tabindex="-1"></a><span class="co"># apply()</span></span>
 <span id="cb30-2"><a href="#cb30-2" tabindex="-1"></a>Mat </span></code></pre></div>
-<pre><code>##            [,1]       [,2]        [,3]       [,4]       [,5]
-## [1,] -0.2011624 -0.6003618  1.47313804  0.6260198 -0.1787008
-## [2,]  0.3629898 -1.0195838 -0.07675708  1.6970822 -1.5491711
-## [3,] -0.2957898 -0.4259755  2.31250993 -1.3577016 -1.0993858
-## [4,]  0.2373952  0.6590040  0.06718808 -1.4969804 -0.0371185
-## [5,]  0.4979651 -0.9105043  1.12500755 -1.8610748 -1.0381731
-## [6,] -0.9430711  1.6429358  0.58359167  0.8421483 -0.2063092</code></pre>
+<pre><code>##              [,1]       [,2]       [,3]       [,4]        [,5]
+## [1,] -0.643664483 -0.3695408  1.4657595  0.1779335 -0.44748441
+## [2,] -0.931089667  3.1929910  0.1459249 -0.4340365 -0.04390189
+## [3,]  0.994935127  0.3442942 -0.7468991 -1.1240146  0.93798614
+## [4,] -0.177227184 -0.8705866 -0.5317729  0.9787338 -0.89453060
+## [5,]  0.006026459 -0.8130856  0.5622329  0.9421085  0.14074624
+## [6,] -0.069394567 -0.9850643  0.9011125  0.3164920  0.85431960</code></pre>
 <div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" tabindex="-1"></a><span class="fu">apply</span>(Mat, <span class="dv">1</span>, <span class="cf">function</span>(x) {<span class="fu">sum</span>(x<span class="sc">*</span><span class="dv">2</span>)}) <span class="co">#the operation is performed on every row of &quot;Mat&quot;; every element is multiplied by two and the sum of the row is calculated</span></span></code></pre></div>
-<pre><code>## [1]  2.237866 -1.170880 -1.732685 -1.141023 -4.373559  3.838591</code></pre>
+<pre><code>## [1]  0.3660065  3.8597757  0.8126035 -2.9907669  1.6760570  2.0349306</code></pre>
 <p>Besides, we can use <code>sapply()</code> for a <strong>list</strong>, for example to calculate the length of every element using <code>length()</code>:</p>
 <div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" tabindex="-1"></a>List1 <span class="ot">&lt;-</span> <span class="fu">list</span>(<span class="at">color =</span> <span class="fu">c</span>(<span class="st">&quot;blue&quot;</span>, <span class="st">&quot;red&quot;</span>), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">state =</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span>))</span>
 <span id="cb34-2"><a href="#cb34-2" tabindex="-1"></a></span>
@@ -516,13 +516,13 @@ We can create a data frame using the <code>data.frame()</code> function. We can 
 <div class="sourceCode" id="cb48"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span></code></pre></div>
 <p>And load it using</p>
 <div class="sourceCode" id="cb49"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## ── Attaching core tidyverse packages ────────── tidyverse 2.0.0 ──
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────────────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.5
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
 ## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
 ## ✔ lubridate 1.9.3     ✔ tidyr     1.3.1
 ## ✔ purrr     1.0.2     
-## ── Conflicts ──────────────────────────── tidyverse_conflicts() ──
+## ── Conflicts ────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## ✖ dplyr::filter() masks stats::filter()
 ## ✖ dplyr::lag()    masks stats::lag()
 ## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
@@ -535,15 +535,15 @@ We can create a data frame using the <code>data.frame()</code> function. We can 
 <p>We can print the first rows of a dataframe using <code>head()</code>. Try it out.</p>
 <div class="sourceCode" id="cb53"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" tabindex="-1"></a><span class="fu">head</span>(msleep)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 11
-##   name    genus vore  order conservation sleep_total sleep_rem sleep_cycle awake
-##   &lt;chr&gt;   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
-## 1 Cheetah Acin… carni Carn… lc                  12.1      NA        NA      11.9
-## 2 Owl mo… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7  
-## 3 Mounta… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6
-## 4 Greate… Blar… omni  Sori… lc                  14.9       2.3       0.133   9.1
-## 5 Cow     Bos   herbi Arti… domesticated         4         0.7       0.667  20  
-## 6 Three-… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6
-## # ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;</code></pre>
+##   name   genus vore  order conservation sleep_total sleep_rem sleep_cycle awake  brainwt
+##   &lt;chr&gt;  &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
+## 1 Cheet… Acin… carni Carn… lc                  12.1      NA        NA      11.9 NA      
+## 2 Owl m… Aotus omni  Prim… &lt;NA&gt;                17         1.8      NA       7    0.0155 
+## 3 Mount… Aplo… herbi Rode… nt                  14.4       2.4      NA       9.6 NA      
+## 4 Great… Blar… omni  Sori… lc                  14.9       2.3       0.133   9.1  0.00029
+## 5 Cow    Bos   herbi Arti… domesticated         4         0.7       0.667  20    0.423  
+## 6 Three… Brad… herbi Pilo… &lt;NA&gt;                14.4       2.2       0.767   9.6 NA      
+## # ℹ 1 more variable: bodywt &lt;dbl&gt;</code></pre>
 </div>
 <div id="filter-based-on-conditions" class="section level3 unnumbered hasAnchor">
 <h3>Filter based on conditions<a href="#filter-based-on-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -552,10 +552,10 @@ We can do it using <code>filter()</code> on the <strong>genus</strong> column:</
 <div class="sourceCode" id="cb55"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" tabindex="-1"></a>msleep <span class="sc">%&gt;%</span></span>
 <span id="cb55-2"><a href="#cb55-2" tabindex="-1"></a>  <span class="fu">filter</span>(genus <span class="sc">==</span> <span class="st">&quot;Sus&quot;</span>)</span></code></pre></div>
 <pre><code>## # A tibble: 1 × 11
-##   name  genus vore  order   conservation sleep_total sleep_rem sleep_cycle awake
-##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;
-## 1 Pig   Sus   omni  Artiod… domesticated         9.1       2.4         0.5  14.9
-## # ℹ 2 more variables: brainwt &lt;dbl&gt;, bodywt &lt;dbl&gt;</code></pre>
+##   name  genus vore  order   conservation sleep_total sleep_rem sleep_cycle awake brainwt
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;     &lt;dbl&gt;       &lt;dbl&gt; &lt;dbl&gt;   &lt;dbl&gt;
+## 1 Pig   Sus   omni  Artiod… domesticated         9.1       2.4         0.5  14.9    0.18
+## # ℹ 1 more variable: bodywt &lt;dbl&gt;</code></pre>
 <p>We also use the <code>%&gt;%</code> operator here. This is a <strong>pipe operator</strong> and you will use it very often.</p>
 <p>To understand piping, let’s imagine you are making a three layer cake in a factory. Instead of manually carrying the cake from one station to another to add layers and frosting, you have a conveyor belt transporting the cake through the stations automatically to make the process much more efficient. Piping avoids that you have to create multiple intermediate objects to achieve your final result when performing multiple functions.</p>
 <blockquote>
